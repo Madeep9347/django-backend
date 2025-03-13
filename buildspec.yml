@@ -15,5 +15,5 @@ phases:
       - docker push 491085426369.dkr.ecr.ap-south-1.amazonaws.com/django-backend:latest
       - printf '{"$imageuri,"%s""}' "491085426369.dkr.ecr.ap-south-1.amazonaws.com/django-backend:latest" > imagedefinition.json
   artifacts:
-  files:
-    - '**/*'
+  	files:
+    	- '**/*'
