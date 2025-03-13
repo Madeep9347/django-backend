@@ -3,7 +3,7 @@ echo "stop the existing container"
 docker rm -f my-app
 
 echo "login to ecr"
-aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 682033487445.dkr.ecr.ap-south-1.amazonaws.com
+aws ecr get-login-password --region ap-south-1 | docker login --username AWS --password-stdin 682033487445.dkr.ecr.ap-south-1.amazonaws.com
 echo "pull the image"
 docker pull 682033487445.dkr.ecr.ap-south-1.amazonaws.com/django-backend:latest
 
