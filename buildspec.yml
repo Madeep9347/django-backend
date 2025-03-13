@@ -3,17 +3,17 @@ phases:
   pre_build:
     commands:
       - echo "lgoin to ecr"
-      - aws ecr get-login-password --region ap-south-1 | docker login --username AWS --password-stdin 682033487445.dkr.ecr.ap-south-1.amazonaws.com
+      - aws ecr get-login-password --region ap-south-1 | docker login --username AWS --password-stdin 491085426369.dkr.ecr.ap-south-1.amazonaws.com
   build:
     commands:
       - echo "build the image"
       - docker build -t django-backend .
-      - docker tag django-backend:latest 682033487445.dkr.ecr.ap-south-1.amazonaws.com/django-backend:latest
+      - docker tag django-backend:latest 491085426369.dkr.ecr.ap-south-1.amazonaws.com/django-backend:latest
   post_build:
     commands:
       - echo "push to ecr"
-      - docker push 682033487445.dkr.ecr.ap-south-1.amazonaws.com/django-backend:latest
-      - printf '{"$imageuri,"%s""}' "682033487445.dkr.ecr.ap-south-1.amazonaws.com/django-backend:latest" > imagedefinition.json
+      - docker push 491085426369.dkr.ecr.ap-south-1.amazonaws.com/django-backend:latest
+      - printf '{"$imageuri,"%s""}' "491085426369.dkr.ecr.ap-south-1.amazonaws.com/django-backend:latest" > imagedefinition.json
   artifacts:
     files:
       - imagedefinition.json
