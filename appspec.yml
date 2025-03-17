@@ -4,7 +4,7 @@ files:
   - source: /
     destination: /home/ubuntu/
 hooks:
-  Applicationstart:
+  ApplicationStart:
       - location : scripts/start-container.sh
         timeout: 300
         runas: ubuntu
